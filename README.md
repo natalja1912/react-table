@@ -17,7 +17,5 @@
  * хуки React JS
 
 ## Ссылка на сайт github pages 
-http://natalia-best.tk/
+https://natalja1912.github.io/react-table/
 
-## Как проводилось тестирование проекта
-Тестирование проекта проводилось с помощью инструментов разработчика (Chrome DevTools, React DevTools), функционала отладки (debugger)
