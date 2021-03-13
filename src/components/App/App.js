@@ -7,12 +7,13 @@ import AddNewUser from '../AddNewUser/AddNewUser';
 import DisplayDetails from '../DisplayDetails/DisplayDetails';
 import AddUserForm from '../AddUserForm/AddUserForm';
 import sortItems from '../sortItems';
+import smallData from '../../data/small_data';
+import bigData from '../../data/big_data';
 import './App.css';
 
 function App() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [link, setLink] = useState('');
   const usersPerPage = 50;
   const [indexes, setIndexes] = useState({ index1: 0, index2: 50 });
   const [filter, setFilter] = useState('');
@@ -30,25 +31,10 @@ function App() {
     arrow5: '⇑',
   });
 
-  const small = 'http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}';
-  const big = 'http://www.filltext.com/?rows=1000&id={number|1000}&firstName={firstName}&delay=3&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}';
-
-
-  //загрузка данных с сервера
+  //загрузка данных о пользователях при загрузке страницы
   useEffect(() => {
-    setIsLoading(true);
-    fetch(link)
-      .then((res) => {
-        return res.json()
-      })
-      .then((res) => {
-        setData(res);
-        setFilteredData(res);
-      }
-      )
-      .catch((error) => console.log(error))
-      .finally(() => setIsLoading(false))
-  }, [link])
+    setData(smallData);
+  }, [])
 
 
   //изменение индексов отображаемых элементов при изменении номера страницы
@@ -62,13 +48,13 @@ function App() {
     setShownData(filteredData.slice(indexOfFirstItem, indexOfLastItem));
   }
 
- //перезапись массива отображаемых элементов при изменении индексов или отфильтрованных данных
+  //перезапись массива отображаемых элементов при изменении индексов или отфильтрованных данных
   useEffect(() => {
     setShownData(filteredData.slice(indexes.index1, indexes.index2));
   }, [indexes, filteredData])
 
 
-//перезапись массива отфильтрованных данных при каждом изменении значения фильтра
+  //перезапись массива отфильтрованных данных при каждом изменении значения фильтра
   useEffect(() => {
     const search = filter.toLowerCase();
     if (search) {
@@ -126,8 +112,8 @@ function App() {
     <div className="App">
       <h1 className='heading'>Данные пользователей</h1>
       <div>
-        <button className='data-button' onClick={() => setLink(small)}>Загрузить данные о 32 пользователях</button>
-        <button className='data-button' onClick={() => setLink(big)}>Загрузить данные о всех пользователях</button>
+        <button className='data-button' onClick={() => setData(smallData)}>Загрузить данные о 32 пользователях</button>
+        <button className='data-button' onClick={() => setData(bigData)}>Загрузить данные о всех пользователях</button>
       </div>
 
       {isLoading ? <Loading /> :
