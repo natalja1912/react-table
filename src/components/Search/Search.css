@@ -1,0 +1,11 @@
+.search{
+    display: flex;
+    box-sizing: border-box;
+    margin: 0 0 30px 30px;
+}
+
+.search__button{
+    border: none;
+    cursor: pointer;
+    background-color: lightskyblue;
+}

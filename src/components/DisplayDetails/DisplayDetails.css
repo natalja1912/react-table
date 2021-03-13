@@ -1,0 +1,12 @@
+.display__container{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    text-align: left;
+    border: 1px solid #efefef;
+}
+
+.display__textarea{
+    width: 200px;
+    margin-bottom: 20px;
+}

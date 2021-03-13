@@ -1,0 +1,24 @@
+.user__container{
+    display: flex;
+    margin-bottom: 30px;
+    font-size: 16px;
+    
+}
+
+.user__text{
+    margin: 0;
+    padding: 0;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.user__button{
+    display: inline-block;
+    font-size: 24px;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    background-color: #efefef;
+}

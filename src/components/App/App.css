@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.heading{
+  font-size: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightslategray;
+
+}
+
+.cover{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.data-button{
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px;
+  width: 200px;
+  background-color: transparent;
+  border: none;
+  border-radius: 3px;
+  margin-right: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  background-color:#efefef;
+
+}
+
+.data-button:last-of-type{
+  margin-right: 0;
+}
+
+.data-button:hover{
+  box-shadow: 6px 6px 12px 0px rgba(34, 60, 80, 0.2);
+}
+
+.data-button:active{
+  border: none;
+}
+
